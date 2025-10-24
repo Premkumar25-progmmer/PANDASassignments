@@ -116,7 +116,12 @@ ss.groupby('Arizona')['Sales'].mean().idxmax()
 
 
 # In[ ]:
+# # 11.  Display the top 5 stores with the highest Total_Sales.
 
+df['Total_Sales'] = df[['Jan','Feb','Mar','Apr','May','Jun','July','Aug','Sep','Oct','Nov','Dec']].sum(axis=1)
+# Sort and display top 5 stores
+top_5_stores = df[['store_id', 'Total_Sales']].sort_values(by='Total_Sales', ascending=False).head(5)
+print(top_5_stores)
 
 
 
